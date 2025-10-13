@@ -72,3 +72,17 @@ undefined
 {"level":"info","message":"User authenticated successfully: faeza@gmail.com","service":"user-service","timestamp":"2025-10-13T09:54:33.654Z"}
 {"level":"info","message":"User signed in successfully: faeza@gmail.com","service":"user-service","timestamp":"2025-10-13T09:54:33.657Z"}
 {"level":"info","message":"::1 - - [13/Oct/2025:09:54:33 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 111 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T09:54:33.658Z"}
+{"level":"info","message":"Hello from acquisitions api ","service":"user-service","timestamp":"2025-10-13T10:29:44.002Z"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:29:44 +0000] \"GET / HTTP/1.1\" 200 28 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Safari/605.1.15\"","service":"user-service","timestamp":"2025-10-13T10:29:44.023Z"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:01 +0000] \"POST /health HTTP/1.1\" 404 146 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:01.023Z"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:05 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:05.941Z"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:06 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:06.945Z"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:07 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:07.410Z"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:07 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:07.676Z"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:07 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:07.886Z"}
+{"ip":"::1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"user-service","timestamp":"2025-10-13T10:30:08.034Z","userAgent":"bruno-runtime/2.9.1"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:08 +0000] \"GET /health HTTP/1.1\" 403 53 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:08.036Z"}
+{"ip":"::1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"user-service","timestamp":"2025-10-13T10:30:08.042Z","userAgent":"bruno-runtime/2.9.1"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:08 +0000] \"GET /health HTTP/1.1\" 403 53 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:08.044Z"}
+{"ip":"::1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"user-service","timestamp":"2025-10-13T10:30:08.348Z","userAgent":"bruno-runtime/2.9.1"}
+{"level":"info","message":"::1 - - [13/Oct/2025:10:30:08 +0000] \"GET /health HTTP/1.1\" 403 53 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:08.349Z"}
