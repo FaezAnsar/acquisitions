@@ -1,18 +1,18 @@
-import arcjet, { detectBot, shield, slidingWindow } from "@arcjet/node";
+import arcjet, { detectBot, shield, slidingWindow } from '@arcjet/node';
 
-import http from "node:http";
+import http from 'node:http';
 
 const aj = arcjet({
   key: process.env.ARCJET_KEY, // Get your site key from https://app.arcjet.com
   rules: [
     // Shield protects your app from common attacks e.g. SQL injection
-    shield({ mode: "LIVE" }),
+    shield({ mode: 'LIVE' }),
     // Create a bot detection rule
     detectBot({
-      mode: "LIVE", // Blocks requests. Use "DRY_RUN" to log only
+      mode: 'LIVE', // Blocks requests. Use "DRY_RUN" to log only
       // Block all bots except the following
       allow: [
-        "CATEGORY:SEARCH_ENGINE", // Google, Bing, etc
+        'CATEGORY:SEARCH_ENGINE', // Google, Bing, etc
         // Uncomment to allow these other common bot categories
         // See the full list at https://arcjet.com/bot-list
         //"CATEGORY:MONITOR", // Uptime monitoring services
@@ -21,10 +21,10 @@ const aj = arcjet({
     }),
     // Create a token bucket rate limit. Other algorithms are supported.
     slidingWindow({
-        mode:'LIVE',
-            interval:'2s',
-            max:5
-    })
+      mode: 'LIVE',
+      interval: '2s',
+      max: 5,
+    }),
   ],
 });
 

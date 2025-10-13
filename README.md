@@ -35,11 +35,12 @@ Copy and update the environment files:
 # Copy development environment template
 cp .env.development .env.dev.local
 
-# Copy production environment template  
+# Copy production environment template
 cp .env.production .env.prod.local
 ```
 
 Update `.env.dev.local` with your Neon credentials:
+
 ```bash
 NEON_API_KEY=your_actual_neon_api_key
 NEON_PROJECT_ID=your_actual_project_id
@@ -48,6 +49,7 @@ ARCJET_KEY=your_arcjet_key
 ```
 
 Update `.env.prod.local` with your production values:
+
 ```bash
 DATABASE_URL=postgresql://username:password@ep-xxxxx.us-east-1.aws.neon.tech/dbname?sslmode=require
 ARCJET_KEY=your_production_arcjet_key
@@ -66,12 +68,14 @@ docker-compose -f docker-compose.dev.yml up --build
 ```
 
 This will:
+
 - ✅ Start Neon Local proxy (creates ephemeral database branch)
 - ✅ Build and run your application
 - ✅ Enable hot reloading for development
 - ✅ Automatically connect to the ephemeral database
 
 **Access your application:**
+
 - API: http://localhost:3000
 - Health check: http://localhost:3000/health
 - Database: `postgres://neon:npg@localhost:5432/neondb?sslmode=require`
@@ -125,6 +129,7 @@ docker-compose -f docker-compose.prod.yml up --build -d
 ### Option 2: Platform Deployment (Heroku, Railway, etc.)
 
 1. **Set environment variables in your platform:**
+
    ```bash
    NODE_ENV=production
    DATABASE_URL=postgresql://username:password@ep-xxxxx.us-east-1.aws.neon.tech/dbname?sslmode=require
@@ -134,10 +139,11 @@ docker-compose -f docker-compose.prod.yml up --build -d
    ```
 
 2. **Deploy using platform-specific commands:**
+
    ```bash
    # Example for Railway
    railway up
-   
+
    # Example for Heroku
    git push heroku main
    ```
@@ -154,8 +160,8 @@ metadata:
   name: acquisitions-secrets
 type: Opaque
 stringData:
-  database-url: "postgresql://username:password@ep-xxxxx.us-east-1.aws.neon.tech/dbname?sslmode=require"
-  arcjet-key: "your_production_arcjet_key"
+  database-url: 'postgresql://username:password@ep-xxxxx.us-east-1.aws.neon.tech/dbname?sslmode=require'
+  arcjet-key: 'your_production_arcjet_key'
 ```
 
 ```bash
@@ -168,7 +174,7 @@ kubectl apply -f k8s/
 ### Development Database Lifecycle
 
 - **Start**: Creates a fresh ephemeral branch from your parent branch
-- **Development**: All changes are isolated to your ephemeral branch  
+- **Development**: All changes are isolated to your ephemeral branch
 - **Stop**: Automatically deletes the ephemeral branch (no cleanup needed!)
 
 ### Production Database
@@ -180,6 +186,7 @@ kubectl apply -f k8s/
 ## 🛠️ Development Workflow
 
 1. **Start Development Environment**
+
    ```bash
    export $(grep -v '^#' .env.dev.local | xargs)
    docker-compose -f docker-compose.dev.yml up --build
@@ -191,10 +198,11 @@ kubectl apply -f k8s/
    - Generate migrations: `npm run db:generate`
 
 3. **Test Your Changes**
+
    ```bash
    # Check health
    curl http://localhost:3000/health
-   
+
    # Test your API endpoints
    curl http://localhost:3000/api
    ```
@@ -210,6 +218,7 @@ kubectl apply -f k8s/
 ### Common Issues
 
 **Database Connection Failed**
+
 ```bash
 # Check if Neon Local is running
 docker-compose -f docker-compose.dev.yml ps
@@ -219,6 +228,7 @@ docker-compose -f docker-compose.dev.yml logs neon-local
 ```
 
 **Environment Variables Not Loading**
+
 ```bash
 # Verify environment variables are set
 export $(grep -v '^#' .env.dev.local | xargs)
@@ -226,6 +236,7 @@ env | grep NEON
 ```
 
 **Port Already in Use**
+
 ```bash
 # Check what's using the port
 lsof -i :3000
@@ -241,7 +252,7 @@ docker-compose -f docker-compose.dev.yml down
 # View application logs
 docker-compose -f docker-compose.dev.yml logs -f acquisitions-app
 
-# View database proxy logs  
+# View database proxy logs
 docker-compose -f docker-compose.dev.yml logs -f neon-local
 
 # Enter application container for debugging

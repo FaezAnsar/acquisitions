@@ -6,7 +6,6 @@ const logger = winston.createLogger({
     winston.format.timestamp(),
     winston.format.json(),
     winston.format.errors({ stack: true })
-
   ),
   defaultMeta: { service: 'user-service' },
   transports: [
@@ -20,7 +19,6 @@ const logger = winston.createLogger({
     // - Write all logs with importance level of `info` or higher to `combined.log`
     //   (i.e., fatal, error, warn, and info, but not trace)
     //
-
   ],
 });
 
@@ -29,12 +27,14 @@ const logger = winston.createLogger({
 // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
 //
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.combine(
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.combine(
         winston.format.colorize(),
         winston.format.simple()
-    ),
-  }));
+      ),
+    })
+  );
 }
 
 export default logger;
