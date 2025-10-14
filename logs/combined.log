@@ -86,3 +86,12 @@ undefined
 {"level":"info","message":"::1 - - [13/Oct/2025:10:30:08 +0000] \"GET /health HTTP/1.1\" 403 53 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:08.044Z"}
 {"ip":"::1","level":"warn","message":"Rate limit exceeded","path":"/health","service":"user-service","timestamp":"2025-10-13T10:30:08.348Z","userAgent":"bruno-runtime/2.9.1"}
 {"level":"info","message":"::1 - - [13/Oct/2025:10:30:08 +0000] \"GET /health HTTP/1.1\" 403 53 \"-\" \"bruno-runtime/2.9.1\"","service":"user-service","timestamp":"2025-10-13T10:30:08.349Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:34:21 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:34:21.663Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:34:21 +0000] \"GET /api HTTP/1.1\" 200 27 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:34:21.680Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:34:21 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:34:21.694Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:36:51 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:36:51.363Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:36:51 +0000] \"GET /api HTTP/1.1\" 200 27 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:36:51.381Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:36:51 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:36:51.394Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:38:18 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:38:18.781Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:38:18 +0000] \"GET /api HTTP/1.1\" 200 27 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:38:18.800Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [14/Oct/2025:11:38:18 +0000] \"GET /nonexistent HTTP/1.1\" 404 27 \"-\" \"-\"","service":"user-service","timestamp":"2025-10-14T11:38:18.811Z"}
