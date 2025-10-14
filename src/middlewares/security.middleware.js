@@ -6,20 +6,16 @@ const securityMiddleware = async (req, res, next) => {
   try {
     const role = req.user?.role || 'guest';
     let limit;
-    let message;
 
     switch (role) {
       case 'admin':
         limit = 20;
-        message = 'Admin req limit exceeded (20 requests per minute)';
         break;
       case 'user':
         limit = 10;
-        message = 'User req limit exceeded (10 requests per minute)';
         break;
       case 'guest':
         limit = 5;
-        message = 'Guest req limit exceeded (5 requests per minute)';
         break;
     }
     const client = aj.withRule(
@@ -48,12 +44,10 @@ const securityMiddleware = async (req, res, next) => {
         path: req.path,
         method: req.method,
       });
-      return res
-        .status(403)
-        .json({
-          error: 'Forbidden',
-          message: 'Shield requests are not allowed',
-        });
+      return res.status(403).json({
+        error: 'Forbidden',
+        message: 'Shield requests are not allowed',
+      });
     }
     if (decision.isDenied() && decision.reason.isRateLimit()) {
       logger.warn('Rate limit exceeded', {

@@ -44,7 +44,7 @@ export const authenticateUser = async ({ email, password }) => {
     }
 
     // Return user without password
-    const { password: _, ...userWithoutPassword } = user;
+    const { password, ...userWithoutPassword } = user;
     logger.info(`User authenticated successfully: ${email}`);
     return userWithoutPassword;
   } catch (err) {

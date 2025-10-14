@@ -1,7 +1,5 @@
 import arcjet, { detectBot, shield, slidingWindow } from '@arcjet/node';
 
-import http from 'node:http';
-
 const aj = arcjet({
   key: process.env.ARCJET_KEY, // Get your site key from https://app.arcjet.com
   rules: [

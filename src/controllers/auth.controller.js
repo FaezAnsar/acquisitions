@@ -1,4 +1,3 @@
-import { format } from 'morgan';
 import logger from '#config/logger';
 
 import { formatValidationErrors } from '#utils/format';
@@ -6,16 +5,14 @@ import { signUpSchema, signInSchema } from '#validations/auth.validation';
 import { jwttoken } from '#utils/jwt';
 import { createUser, authenticateUser } from '#services/auth.service';
 import { cookies } from '#utils/cookies';
-export const signup = async (req, res, next) => {
+export const signup = async (req, res, _next) => {
   try {
     const validationResult = signUpSchema.safeParse(req.body);
     if (!validationResult.success) {
-      return res
-        .status(400)
-        .json({
-          error: 'Validation Failed',
-          details: formatValidationErrors(validationResult.error),
-        });
+      return res.status(400).json({
+        error: 'Validation Failed',
+        details: formatValidationErrors(validationResult.error),
+      });
     }
     const { name, email, password, role } = validationResult.data;
 
@@ -46,7 +43,7 @@ export const signup = async (req, res, next) => {
   }
 };
 
-export const signin = async (req, res, next) => {
+export const signin = async (req, res, _next) => {
   try {
     const validationResult = signInSchema.safeParse(req.body);
     if (!validationResult.success) {
@@ -86,7 +83,7 @@ export const signin = async (req, res, next) => {
   }
 };
 
-export const signout = async (req, res, next) => {
+export const signout = async (req, res, _next) => {
   try {
     // Clear the authentication cookie
     cookies.clear(res, 'token');
